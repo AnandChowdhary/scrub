@@ -3,7 +3,9 @@
 [![Travis CI](https://img.shields.io/travis/AnandChowdhary/scrub.svg)](https://travis-ci.org/AnandChowdhary/scrub)
 [![GitHub](https://img.shields.io/github/license/anandchowdhary/scrub.svg)](https://github.com/AnandChowdhary/scrub/blob/master/LICENSE)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/scrub.svg)
-[![Minzipped size](https://img.shields.io/bundlephobia/minzip/scrub.svg)](https://www.npmjs.com/package/scrub)
+[![Minzipped size](https://img.shields.io/bundlephobia/minzip/scrub-js.svg)](https://www.npmjs.com/package/scrub-js)
+[![NPM version](https://img.shields.io/npm/v/scrub-js.svg)](https://www.npmjs.com/package/scrub-js)
+[![Types](https://img.shields.io/npm/types/scrub-js.svg)](https://www.npmjs.com/package/scrub-js)
 
 With Scrub, you can easily track errors and send them to your backend.
 

@@ -1,2 +1,4 @@
 var scrub = new window.Scrub();
-console.log("This should give an error!", undefinedVariable);
+console.error = function () { };
+// @ts-ignore
+console.log("This should throw an error", undefinedVariable);

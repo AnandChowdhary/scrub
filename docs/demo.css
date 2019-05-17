@@ -28,7 +28,15 @@ P:last-child {
   margin-bottom: 0;
 }
 
-/* Library-specific styles here */
+
+button {
+  appearance: none;
+  font: inherit;
+  background-color: #eee;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: 1px solid #ddd;
+}
 
 strong {
   display: block;

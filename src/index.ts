@@ -1,12 +1,26 @@
-import { ScrubInterface } from "./interfaces";
+import { TraceItem } from "./interfaces";
 import TraceKit, { StackTrace } from "tracekit";
 
-export default class Scrub implements ScrubInterface {
+export default class Scrub {
+  trace: TraceItem[] = [];
   constructor() {
-    TraceKit.report.subscribe(this.handler);
+    TraceKit.report.subscribe(this.handler.bind(this));
   }
-  handler(StackTrace: StackTrace) {
-    console.log("Tracing this", StackTrace);
+  createTraceItem(stackTrack: StackTrace): TraceItem {
+    const title = stackTrack.message;
+    return { title };
+  }
+  handler(stackTrace: StackTrace) {
+    const item = this.createTraceItem(stackTrace);
+    this.trace.push(item);
+    this.updateValue();
+  }
+  updateValue() {
+    const value = document.querySelector("#value");
+    if (value)
+      value.innerHTML = `${this.trace.length} error${
+        this.trace.length === 1 ? "" : "s"
+      }`;
   }
 }
 

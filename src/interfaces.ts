@@ -1,5 +1,5 @@
-interface ScrubInterface {
-  handler: Function;
+interface TraceItem {
+  title: string;
 }
 
-export { ScrubInterface };
+export { TraceItem };

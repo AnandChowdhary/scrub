@@ -38,7 +38,7 @@ const scrub = new Scrub({ endpoint: "https://example.com/track" });
 You can also use a CDN:
 
 ```html
-<script src="https://unpkg.com/scrub"></script>
+<script src="https://unpkg.com/scrub-js"></script>
 ```
 
 Now, your errors are tracked. Try it with `throw new Error("Example error");`.

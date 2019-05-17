@@ -1,6 +1,7 @@
 interface BrowserOS {
     name?: string;
     version?: string;
+    iconUrl?: string;
 }
 interface TraceItem {
     unixTimestamp: number;

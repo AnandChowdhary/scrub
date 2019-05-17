@@ -49,4 +49,5 @@ pre {
   text-align: left;
   margin-top: 3rem;
   padding: 1rem;
+  overflow: auto;
 }

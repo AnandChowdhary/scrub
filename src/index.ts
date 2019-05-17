@@ -1,6 +1,7 @@
-import { TraceItem } from "./interfaces";
-import TraceKit, { StackTrace } from "tracekit";
 import { UAParser } from "ua-parser-js";
+import TraceKit, { StackTrace } from "tracekit";
+import icon from "analytics-icons";
+import { TraceItem } from "./interfaces";
 
 export default class Scrub {
   trace: TraceItem[] = [];
@@ -9,11 +10,25 @@ export default class Scrub {
   }
   createTraceItem(stackTrack: StackTrace): TraceItem {
     const userAgent = new UAParser(stackTrack.useragent);
+    const browserInfo = userAgent.getBrowser();
+    const operatingSystemInfo = userAgent.getOS();
     return {
       unixTimestamp: Math.floor(new Date().getTime() / 1000),
       title: stackTrack.message,
-      browser: userAgent.getBrowser(),
-      operatingSystem: userAgent.getOS(),
+      browser: {
+        ...browserInfo,
+        iconUrl: icon(
+          browserInfo.name || "chrome",
+          "https://cdnjs.cloudflare.com/ajax/libs/browser-logos/51.0.13/chrome/chrome_128x128.png"
+        )
+      },
+      operatingSystem: {
+        ...operatingSystemInfo,
+        iconUrl: icon(
+          operatingSystemInfo.name || "chrome",
+          "https://cdnjs.cloudflare.com/ajax/libs/browser-logos/51.0.13/chrome/chrome_128x128.png"
+        )
+      },
       userAgent: stackTrack.useragent,
       url: stackTrack.url
     };

@@ -1,5 +1,5 @@
-import { TraceItem } from "./interfaces";
 import { StackTrace } from "tracekit";
+import { TraceItem } from "./interfaces";
 export default class Scrub {
     trace: TraceItem[];
     constructor();

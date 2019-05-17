@@ -1,11 +1,25 @@
 import { UAParser } from "ua-parser-js";
 import TraceKit, { StackTrace } from "tracekit";
+import { dot } from "dot-object";
 import icon from "analytics-icons";
-import { TraceItem } from "./interfaces";
+import { TraceItem, Constructor } from "./interfaces";
+
+const dotify = (object: any) => {
+  object = dot(object);
+  for (let key in object) {
+    if (key.includes(".")) {
+      object[key.replace(/\./g, "_")] = object[key];
+      delete object[key];
+    }
+  }
+  return object;
+};
 
 export default class Scrub {
   trace: TraceItem[] = [];
-  constructor() {
+  options?: Constructor;
+  constructor(options: Constructor) {
+    if (options) this.options = options;
     TraceKit.report.subscribe(this.handler.bind(this));
   }
   createTraceItem(stackTrack: StackTrace): TraceItem {
@@ -36,6 +50,7 @@ export default class Scrub {
   handler(stackTrace: StackTrace) {
     const item = this.createTraceItem(stackTrace);
     this.trace.push(item);
+    this.sendToServer(item);
     this.updateValue();
   }
   updateValue() {
@@ -48,6 +63,23 @@ export default class Scrub {
     if (errorsString)
       errorsString.innerHTML = JSON.stringify(this.trace, null, 2);
     console.log(this.trace);
+  }
+  async sendToServer(item: TraceItem) {
+    try {
+      if (!this.options || !this.options.endpoint) return;
+      if (this.options.dotObject) item = dotify(item);
+      if (this.options.alsoSend) item = { ...item, ...this.options.alsoSend };
+      await fetch(this.options.endpoint, {
+        method: this.options.method || "POST",
+        body: JSON.stringify(item),
+        headers: {
+          "Content-Type": "application/json",
+          "X-Requested-With": "scrub"
+        }
+      });
+    } catch (error) {
+      // Inception
+    }
   }
 }
 

@@ -11,4 +11,10 @@ interface TraceItem {
     url: string;
     userAgent: string;
 }
-export { TraceItem };
+interface Constructor {
+    endpoint?: string;
+    method?: string;
+    dotObject?: boolean;
+    alsoSend?: any;
+}
+export { TraceItem, Constructor };

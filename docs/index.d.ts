@@ -1,9 +1,11 @@
 import { StackTrace } from "tracekit";
-import { TraceItem } from "./interfaces";
+import { TraceItem, Constructor } from "./interfaces";
 export default class Scrub {
     trace: TraceItem[];
-    constructor();
+    options?: Constructor;
+    constructor(options: Constructor);
     createTraceItem(stackTrack: StackTrace): TraceItem;
     handler(stackTrace: StackTrace): void;
     updateValue(): void;
+    sendToServer(item: TraceItem): Promise<void>;
 }

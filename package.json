@@ -25,6 +25,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.5",
     "@types/node": "^12.0.0",
+    "@types/ua-parser-js": "^0.7.33",
     "@types/webpack": "^4.4.24",
     "concurrently": "^4.1.0",
     "coveralls": "^3.0.2",
@@ -62,6 +63,7 @@
     ]
   },
   "dependencies": {
-    "tracekit": "^0.4.5"
+    "tracekit": "^0.4.5",
+    "ua-parser-js": "^0.7.19"
   }
 }

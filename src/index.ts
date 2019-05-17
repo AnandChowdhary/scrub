@@ -1,5 +1,6 @@
 import { TraceItem } from "./interfaces";
 import TraceKit, { StackTrace } from "tracekit";
+import { UAParser } from "ua-parser-js";
 
 export default class Scrub {
   trace: TraceItem[] = [];
@@ -7,8 +8,14 @@ export default class Scrub {
     TraceKit.report.subscribe(this.handler.bind(this));
   }
   createTraceItem(stackTrack: StackTrace): TraceItem {
-    const title = stackTrack.message;
-    return { title };
+    const userAgent = new UAParser(stackTrack.useragent);
+    return {
+      title: stackTrack.message,
+      browser: userAgent.getBrowser(),
+      operatingSystem: userAgent.getOS(),
+      userAgent: stackTrack.useragent,
+      url: stackTrack.url
+    };
   }
   handler(stackTrace: StackTrace) {
     const item = this.createTraceItem(stackTrace);
@@ -21,6 +28,7 @@ export default class Scrub {
       value.innerHTML = `${this.trace.length} error${
         this.trace.length === 1 ? "" : "s"
       }`;
+    console.log(this.trace);
   }
 }
 

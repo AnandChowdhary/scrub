@@ -4,11 +4,12 @@ interface BrowserOS {
 }
 
 interface TraceItem {
+  unixTimestamp: number;
   title: string;
   browser: BrowserOS;
   operatingSystem: BrowserOS;
-  userAgent: string;
   url: string;
+  userAgent: string;
 }
 
 export { TraceItem };

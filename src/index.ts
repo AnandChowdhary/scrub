@@ -10,6 +10,7 @@ export default class Scrub {
   createTraceItem(stackTrack: StackTrace): TraceItem {
     const userAgent = new UAParser(stackTrack.useragent);
     return {
+      unixTimestamp: Math.floor(new Date().getTime() / 1000),
       title: stackTrack.message,
       browser: userAgent.getBrowser(),
       operatingSystem: userAgent.getOS(),
@@ -28,6 +29,9 @@ export default class Scrub {
       value.innerHTML = `${this.trace.length} error${
         this.trace.length === 1 ? "" : "s"
       }`;
+    const errorsString = document.querySelector("#errorsString");
+    if (errorsString)
+      errorsString.innerHTML = JSON.stringify(this.trace, null, 2);
     console.log(this.trace);
   }
 }

@@ -43,3 +43,10 @@ strong {
   font-size: 300%;
   font-weight: 300;
 }
+
+pre {
+  background-color: whitesmoke;
+  text-align: left;
+  margin-top: 3rem;
+  padding: 1rem;
+}

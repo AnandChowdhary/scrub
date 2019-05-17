@@ -4,7 +4,7 @@ export default class Scrub {
     trace: TraceItem[];
     options?: Constructor;
     constructor(options: Constructor);
-    createTraceItem(stackTrack: StackTrace): TraceItem;
+    createTraceItem(stackTrace: StackTrace): TraceItem;
     handler(stackTrace: StackTrace): void;
     updateValue(): void;
     sendToServer(item: TraceItem): Promise<void>;

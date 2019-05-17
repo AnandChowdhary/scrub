@@ -22,13 +22,13 @@ export default class Scrub {
     if (options) this.options = options;
     TraceKit.report.subscribe(this.handler.bind(this));
   }
-  createTraceItem(stackTrack: StackTrace): TraceItem {
-    const userAgent = new UAParser(stackTrack.useragent);
+  createTraceItem(stackTrace: StackTrace) {
+    const userAgent = new UAParser(stackTrace.useragent);
     const browserInfo = userAgent.getBrowser();
     const operatingSystemInfo = userAgent.getOS();
-    return {
+    const item: TraceItem = {
       unixTimestamp: Math.floor(new Date().getTime() / 1000),
-      title: stackTrack.message,
+      title: stackTrace.message,
       browser: {
         ...browserInfo,
         iconUrl: icon(
@@ -39,13 +39,21 @@ export default class Scrub {
       operatingSystem: {
         ...operatingSystemInfo,
         iconUrl: icon(
-          operatingSystemInfo.name || "chrome",
-          "https://cdnjs.cloudflare.com/ajax/libs/browser-logos/51.0.13/chrome/chrome_128x128.png"
+          operatingSystemInfo.name || "windows",
+          "https://unpkg.com/analytics-icons/icons/windows.png"
         )
       },
-      userAgent: stackTrack.useragent,
-      url: stackTrack.url
+      type: stackTrace.name,
+      userAgent: stackTrace.useragent
     };
+    if (stackTrace.stack.length) {
+      item.url = stackTrace.stack[0].url;
+      item.line = stackTrace.stack[0].line;
+      item.column = stackTrace.stack[0].column;
+      item.func = stackTrace.stack[0].func;
+      item.context = stackTrace.stack[0].context.join("\n");
+    }
+    return item;
   }
   handler(stackTrace: StackTrace) {
     const item = this.createTraceItem(stackTrace);

@@ -7,10 +7,15 @@ interface BrowserOS {
 interface TraceItem {
   unixTimestamp: number;
   title: string;
+  type: string;
   browser: BrowserOS;
   operatingSystem: BrowserOS;
-  url: string;
+  url?: string;
   userAgent: string;
+  line?: number;
+  column?: number;
+  func?: string;
+  context?: string;
 }
 
 interface Constructor {

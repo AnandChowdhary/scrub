@@ -1,8 +1,8 @@
 var scrub = new window.Scrub({
-    endpoint: "https://anandchowdhary8.wixsite.com/mysite/_functions/issues",
+    endpoint: "http://0.0.0.0:3589/https://anandchowdhary8.wixsite.com/mysite/_functions/issues",
     dotObject: true,
     alsoSend: {
-        status: "new"
+        statusCode: "new"
     }
 });
 // @ts-ignore

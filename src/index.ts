@@ -1,17 +1,13 @@
-import { Typerface } from "./interfaces";
-import { random } from "./random";
-import "./styles/index.scss";
+import { ScrubInterface } from "./interfaces";
+import TraceKit, { StackTrace } from "tracekit";
 
-export default class Typestart implements Typerface {
-  value: string;
-  constructor(el?: string) {
-    this.value = random();
-    const valueElement: HTMLElement | null = document.querySelector(
-      el || "strong"
-    );
-    if (valueElement) valueElement.innerHTML = this.value;
-    console.log("The random value is", this.value);
+export default class Scrub implements ScrubInterface {
+  constructor() {
+    TraceKit.report.subscribe(this.handler);
+  }
+  handler(StackTrace: StackTrace) {
+    console.log("Tracing this", StackTrace);
   }
 }
 
-(<any>window).Typestart = Typestart;
+(<any>window).Scrub = Scrub;

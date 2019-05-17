@@ -1,1 +1,1 @@
-const typestart = new (<any> window).Typestart("strong");
+const scrub = new (<any> window).Scrub();

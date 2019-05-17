@@ -1,1 +1,2 @@
-var typestart = new window.Typestart("strong");
+var scrub = new window.Scrub();
+console.log("This should give an error!", undefinedVariable);

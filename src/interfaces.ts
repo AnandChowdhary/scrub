@@ -1,5 +1,5 @@
-interface Typerface {
-  value?: string;
+interface ScrubInterface {
+  handler: Function;
 }
 
-export { Typerface };
+export { ScrubInterface };

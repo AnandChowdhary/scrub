@@ -1,6 +1,6 @@
-import { Typerface } from "./interfaces";
-import "./styles/index.scss";
-export default class Typestart implements Typerface {
-    value: string;
-    constructor(el?: string);
+import { ScrubInterface } from "./interfaces";
+import { StackTrace } from "tracekit";
+export default class Scrub implements ScrubInterface {
+    constructor();
+    handler(StackTrace: StackTrace): void;
 }

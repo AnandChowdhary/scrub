@@ -1,93 +1,46 @@
-# 📦 Typestart
+# 🧹 Scrub
 
-[![Travis CI](https://img.shields.io/travis/AnandChowdhary/typestart.svg)](https://travis-ci.org/AnandChowdhary/typestart)
-[![Coverage Status](https://coveralls.io/repos/github/AnandChowdhary/typestart/badge.svg?branch=master)](https://coveralls.io/github/AnandChowdhary/typestart?branch=master)
-[![GitHub](https://img.shields.io/github/license/anandchowdhary/typestart.svg)](https://github.com/AnandChowdhary/typestart/blob/master/LICENSE)
-![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/typestart.svg)
-[![Minzipped size](https://img.shields.io/bundlephobia/minzip/typestart.svg)](https://www.npmjs.com/package/typestart)
+[![Travis CI](https://img.shields.io/travis/AnandChowdhary/scrub.svg)](https://travis-ci.org/AnandChowdhary/scrub)
+[![GitHub](https://img.shields.io/github/license/anandchowdhary/scrub.svg)](https://github.com/AnandChowdhary/scrub/blob/master/LICENSE)
+![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/AnandChowdhary/scrub.svg)
+[![Minzipped size](https://img.shields.io/bundlephobia/minzip/scrub.svg)](https://www.npmjs.com/package/scrub)
 
-Typestart is a web/DOM library starter with these features:
-
-- [x] Written in Typescript
-- [x] Built-in demo with GitHub pages (`./docs/` folder)
-- [x] main/module/types in `package.json`
-- [x] Bundled as UMD (works as a module)
-- [x] Exposes `window.Library` (works with CDNs)
-- [x] Style with Sass
-- [x] Test with Jest
-- [x] Build with Travis CI
-- [x] Clean with Prettier
+With Scrub, you can easily track errors and send them to your backend.
 
 ## ⭐ Getting started
 
-Clone and start your project:
+Install Scrub as a dependency:
 
 ```bash
-git clone git@github.com:AnandChowdhary/typestart
-mv typestart my-library && cd my-library
-sudo rm -r .git && git init
-```
-
-Find and replace "typestart" with your library name and "AnandChowdhary" with your GitHub username.
-
-### GitHub configuration
-
-Setup GitHub Pages demo by going to Settings → GitHub Pages → Source → master branch /docs folder.
-
-### Development
-
-Start development server with HMR and prettier:
-
-```bash
-yarn start
-```
-
-### Production
-
-Build a production version:
-
-```bash
-yarn build
-```
-
-## 🛠️ Using a Typestart library
-
-Install the library as a dependency:
-
-```bash
-npm install typestart
+npm install scrub-js
 ```
 
 Or, if you're using Yarn:
 
 ```bash
-yarn add typestart
+yarn add scrub-js
 ```
 
 Then import the library:
 
 ```js
-import Typestart from "typestart";
+import Scrub from "scrub-js";
 ```
 
-And initialize it with an optional selector:
+And initialize it with your settings:
 
 ```js
-const typestart = new Typestart("#heading");
+const scrub = new Scrub({ endpoint: "https://example.com/track" });
 ```
 
 You can also use a CDN:
 
 ```html
-<script src="https://unpkg.com/typestart"></script>
+<script src="https://unpkg.com/scrub"></script>
 ```
 
-## 💡 Why another starter?
-
-I've used a bunch of different Typescript library starters, but they all have tons of boilerplate (super long build rules, scripts for releases, publishing, building, etc.) 
-
-Typestart is—like the name suggests—a starting point.
+Now, your errors are tracked. Try it with `throw new Error("Example error");`.
 
 ## 📝 License
 
-Unlicense (public domain, do whatever you want)
+MIT

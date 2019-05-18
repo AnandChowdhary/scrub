@@ -43,6 +43,38 @@ You can also use a CDN:
 
 Now, your errors are tracked. Try it with `throw new Error("Example error");`.
 
+This is what an error object looks like:
+
+```js
+const error = {
+  "unixTimestamp": 1558166641,
+  "title": "undefinedVariable is not defined",
+  "browser": {
+    "name": "Chrome",
+    "version": "74.0.3729.157",
+    "major": "74",
+    "iconUrl": "https://cdnjs.cloudflare.com/ajax/libs/browser-logos/51.0.13/chrome/chrome_128x128.png"
+  },
+  "operatingSystem": {
+    "name": "Mac OS",
+    "version": "10.14.3",
+    "iconUrl": "https://unpkg.com/analytics-icons/icons/windows.png"
+  },
+  "type": "ReferenceError",
+  "url": "https://anandchowdhary.github.io/scrub/demo.js",
+  "line": 9,
+  "column": 43,
+  "func": "?",
+  "context": `
+    alsoSend: {
+        statusCode: "new"
+      }
+    });
+    console.log("This should throw an error", undefinedVariable);
+  `
+};
+```
+
 ## 📝 License
 
 MIT

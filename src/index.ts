@@ -70,7 +70,6 @@ export default class Scrub {
     const errorsString = document.querySelector("#errorsString");
     if (errorsString)
       errorsString.innerHTML = JSON.stringify(this.trace, null, 2);
-    console.log(this.trace);
   }
   async sendToServer(item: TraceItem) {
     try {

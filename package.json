@@ -30,7 +30,7 @@
     "@types/webpack": "^4.4.24",
     "concurrently": "^4.1.0",
     "coveralls": "^3.0.2",
-    "css-loader": "^2.1.0",
+    "css-loader": "^3.0.0",
     "jest": "^24.1.0",
     "live-server": "^1.2.1",
     "node-sass": "^4.11.0",

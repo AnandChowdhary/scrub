@@ -1554,9 +1554,9 @@ domexception@^1.0.1:
     webidl-conversions "^4.0.2"
 
 dot-object@^1.7.1:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/dot-object/-/dot-object-1.8.0.tgz#248de94da9e41180578c9182f5e7b096f943c38d"
-  integrity sha512-3We/SiWSP9iuCbxOyn5BixM9YVkdV5TjwcqAL5FYzYuSBx9W7fQwF5+4TTmAEmaBqsLw0kXOTihvyExB9vHYfw==
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/dot-object/-/dot-object-1.8.1.tgz#6d2e3412bbf1a078ffc88bf0afb9900be078758b"
+  integrity sha512-Tk/EzgutsRgX1agdapqO8GTLMVFC2wg2X3xJB76W+rEIlTplQksedM/MzYS+FmkE8llJ6nMR60mhhw9aaGGHGA==
   dependencies:
     commander "^2.20.0"
     glob "^7.1.4"

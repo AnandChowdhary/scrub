@@ -572,9 +572,9 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
 analytics-icons@^5.1.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/analytics-icons/-/analytics-icons-5.2.0.tgz#91e449f3f6118ba10bcb77699bd9dba53a5100fb"
-  integrity sha512-enxQqPqUY64iTqzradN/mZMmUXeJ1HoyzfyCNga0/BgB52nwjnGrLhi1UojSiJu2UuexnFGh3MVvCkTCnEVOJw==
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/analytics-icons/-/analytics-icons-5.3.0.tgz#6d14e9853e682eeebdb4b27ae80b17f5637d8fab"
+  integrity sha512-4m3yoU63db1Gjnz0wmGAgO/eogHgeZvKYGa7U7nPfIwuUV/OKBC4JUjrwpzEIXnD3sXx0ccz6G3qurb7ybfudg==
 
 ansi-escapes@^3.0.0:
   version "3.2.0"

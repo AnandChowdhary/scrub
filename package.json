@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "analytics-icons": "^5.1.0",
-    "dot-object": "^1.7.1",
+    "dot-object": "^2.1.2",
     "tracekit": "^0.4.5",
     "ua-parser-js": "^0.7.19"
   }

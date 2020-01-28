@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/dot-object": "^1.7.0",
-    "@types/jest": "^24.0.5",
+    "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "@types/ua-parser-js": "^0.7.33",
     "@types/webpack": "^4.4.24",

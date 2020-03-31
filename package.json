@@ -23,7 +23,7 @@
     "prettier-watch": "onchange 'src/**/*.{js,jsx,ts,tsx,scss,css}' -- prettier --write {{changed}}"
   },
   "devDependencies": {
-    "@types/dot-object": "^1.7.0",
+    "@types/dot-object": "^2.1.0",
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "@types/ua-parser-js": "^0.7.33",
